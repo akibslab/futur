@@ -15,7 +15,6 @@ img {
 */
 body {
     font-family: 'Lato', sans-serif;
-    font-size: 14px;
     color: #657786;
 }
 
@@ -25,13 +24,14 @@ h1, h2, h3, h4, h5 {
 }
 
 .header-secondary h2 {
-    font-size: 66px;
+    font-size: 30px;
     color: #ffdf00;
     margin-bottom: 25px;
 }
 
-.header-secondary h3 {
-    font-size: 30px;
+.header-secondary strong {
+    display: block;
+    font-size: 66px;
     color: #ffdf00;
 }
 
@@ -96,7 +96,7 @@ header .menu ul li:last-child {
 
 header .menu ul li a {
    text-decoration: none;
-   font-size: 12px;
+   font-size: 14px;
    font-weight: 700;
    color: #adadae;
    transition: .3s;
@@ -127,7 +127,7 @@ header .social-icon ul li:last-child {
 
 header .social-icon ul li a {
    text-decoration: none;
-   font-size: 12px;
+   font-size: 20px;
    color: #969799;
 }
 
@@ -175,16 +175,16 @@ header .social-icon ul li a {
  }
 
 
-#hero-section .hero-section-inner .header h2 {
+#hero-section .hero-section-inner .header h1 {
    font-size: 30px;
-   margin-bottom: 20px;
-   font-weight: 800;
    
+   font-weight: 800;
 }
 
-#hero-section .hero-section-inner .header h1 {
-   font-size: 80px;
-   font-weight: 800;
+#hero-section .hero-section-inner .header strong {
+    display: block;
+    font-size: 80px;
+    margin-top: 20px;
 }
 
 #hero-section .hero-section-inner .video-box {
@@ -196,15 +196,23 @@ header .social-icon ul li a {
     max-width: 70px;
 }
 
-#hero-section .hero-content {
+#hero-section .hero-features {
     padding: 75px 0 85px;
+    color:  #acabab;
 }
 
-#hero-section .hero-box img{
-    margin-bottom: 20px;
+#hero-section .feature-img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
 }
 
-#hero-section .hero-box h4{
+#hero-section .feature-img img{
+   max-width: 100%;
+    max-height: 100%;
+}
+
+#hero-section .hero-feature h4{
     font-size: 20px;
     color: #ffdf00;
     font-weight: bold;
@@ -278,7 +286,7 @@ header .social-icon ul li a {
 }
 
 #number-section .item-3 {
-    padding: 15px 124px 35px 0;
+    padding: 15px 122px 35px 0;
     border-right: 1px solid #ffdf00;
 }
 
