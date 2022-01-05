@@ -129,6 +129,11 @@ header .social-icon ul li a {
    text-decoration: none;
    font-size: 20px;
    color: #969799;
+   transition: .3s;
+}
+
+header .social-icon ul li a:hover {
+   color: #fff;
 }
 
 /*
@@ -142,27 +147,11 @@ header .social-icon ul li a {
     background-position: center;
     background-size: cover;
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
-
-/*
-#hero-section::before {
-    content: "";
-    background-position: center;
-    background-size: cover;
-    top: 0;
-    left: 0;
-    background-repeat: no-repeat;
-}
-*/
-
-/*
-#hero-section::before {
-    content: url(../img/hero/bg.png);
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-*/
 
 #hero-section .hero-section-inner{
     padding: 200px 0 75px;
@@ -187,13 +176,53 @@ header .social-icon ul li a {
     margin-top: 20px;
 }
 
-#hero-section .hero-section-inner .video-box {
+#hero-section .hero-section-inner .video-play-icon {
+    width: 100px;
+    height: 100px;
     position: absolute;
-    top: 60px;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-#hero-section .hero-section-inner .video-box img{
-    max-width: 70px;
+#hero-section .video-play-icon:before,
+#hero-section .video-play-icon:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ffffff;
+    animation: pulse 3s linear infinite;
+    transform: scale(0);
+}
+
+#hero-section .video-play-icon:after {
+    animation: pulse 3s linear 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+#hero-section .video-play-icon img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    position: relative;
+    cursor: pointer;
 }
 
 #hero-section .hero-features {
@@ -266,50 +295,48 @@ header .social-icon ul li a {
 
 #number-section .number-box {
     color: #ffdf00;
+    min-width: 385px;
 }
 
 #number-section .number-box span {
     font-size: 60px;
     font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+#number-section .item {
+    width: 50%;
+    min-height: 190px;
 }
 
 #number-section .item-1 {
-    padding: 70px 70px 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
     border-right: 1px solid #ffdf00;
     border-bottom: 1px solid #ffdf00;
 }
 
 #number-section .item-2 {
-    padding: 70px 0px 15px 70px;
-    border-bottom: 1px solid #ffdf00;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
     text-align: right;
+    border-bottom: 1px solid #ffdf00;
 }
 
 #number-section .item-3 {
-    padding: 15px 122px 35px 0;
+    display: flex;
+    flex-direction: column;
     border-right: 1px solid #ffdf00;
 }
 
 #number-section .item-4 {
-    padding: 15px 0px 35px 113px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    
 }
-
-
-/*
-.divider {
-    width: 100%;
-    height: 1px;
-    background: #ffdf00;
-}
-
-.item-2 {
-    margin-left: auto;
-}
-
-.item-4 {
-    margin-left: auto;
-}
-*/
 
 /*
 * ===============================
@@ -328,11 +355,18 @@ header .social-icon ul li a {
 
 .service-item:hover {
     background:#ffdf00;
-    color: black;
+    color: #000;
 }
 
-.service-item img {
+.service-item i {
+    font-size: 50px;
     margin-bottom: 30px;
+    color: #ffe429;
+    transition: .3s;
+}
+
+.service-item:hover i {
+    color: #000;
 }
 
 .service-item h4 {
@@ -356,12 +390,50 @@ header .social-icon ul li a {
 }
 
 #project-section .project-box {
-    max-width: 100%;
     padding: 30px 0 30px;
 }
 
 #project-section .project-item {
-    max-width: 25%;
+    min-width: 25%;
+    position: relative;
+}
+
+#project-section .project-item img {
+    width: 100%;
+    height: 100%;
+}
+
+#project-section .project-item .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#project-section .project-item .overlay a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+
+#project-section .project-item:hover .overlay {
+    opacity: 1;
+}
+
+#project-section .project-item .overlay .title {
+    position: absolute;
+    left: 25px;
+    bottom: 0;
+    transition: 0.3s;
+    color: #ffffff;
 }
 
 
